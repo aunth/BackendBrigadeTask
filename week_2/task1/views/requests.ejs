@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Pending Holiday Requests</title>
+</head>
+<body>
+    <h1>List of Pending Holiday Requests</h1>
+    <ul>
+        <% holidayRequests.filter(request => request.status === 'pending').forEach(request => { %>
+            <li>
+                <strong>Request ID:</strong> <%= request.idForRequest %>, 
+                <strong>Employee ID:</strong> <%= request.employeeId %> (<%= getNameById(request.employeeId) %>), 
+                <strong>Start Date:</strong> <%= request.startDate.toLocaleDateString('en-CA') %>,
+                <strong>End Date:</strong> <%= request.endDate.toLocaleDateString('en-CA') %>
+                <button onclick="approveRequest('<%= request.idForRequest %>')">Approve</button>
+                <button onclick="rejectRequest('<%= request.idForRequest %>')">Reject</button>
+            </li>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+<script>
+    function approveRequest(requestId) {
+        fetch(`/requests/approve/${requestId}`, { method: 'POST' })
+            .then(response => location.reload())
+            .catch(error => console.error('Error:', error));
+    }
+    
+    function rejectRequest(requestId) {
+        fetch(`requests/reject/${requestId}`, { method: 'POST' })
+            .then(response => location.reload())
+            .catch(error => console.error('Error:', error));
+    }
+    </script>
+</html>

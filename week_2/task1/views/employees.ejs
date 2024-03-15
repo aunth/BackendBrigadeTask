@@ -1,0 +1,21 @@
+
+<link rel="stylesheet" href="/css/style.css">
+
+<h1>List of Employees</h1>
+
+<% employees.forEach(employee => { %>
+  <div class="employee">
+    <p><strong><%= `${employee.id} - ${employee.name}` %></strong> (<%= `${employee.remainingHolidays} days remaining` %>)</p>
+    <% const employeeRequests = holidayRequests.filter(request => request.employeeId === employee.id); %>
+    <% if (employeeRequests.length > 0) { %>
+      <p class="requests-heading">Holiday Requests:</p>
+      <ul class="requests-list">
+        <% employeeRequests.forEach(request => { %>
+          <li><strong>Request ID:</strong> <%= request.idForRequest %>, <strong>From:</strong> <%= request.startDate.toLocaleDateString('en-CA') %>, <strong>To:</strong> <%= request.endDate.toLocaleDateString('en-CA') %>, <strong>Status:</strong> <%= request.status %></li>
+        <% }); %>
+      </ul>
+    <% } else { %>
+      <p>No holiday requests.</p>
+    <% } %>
+  </div>
+<% }); %>

@@ -1,0 +1,65 @@
+[
+  {
+    "idForRequest": 1,
+    "employeeId": 1,
+    "startDate": "2024-04-01T00:00:00.000Z",
+    "endDate": "2024-04-05T00:00:00.000Z",
+    "status": "pending"
+  },
+  {
+    "idForRequest": 2,
+    "employeeId": 2,
+    "startDate": "2024-03-14T00:00:00.000Z",
+    "endDate": "2024-03-15T00:00:00.000Z",
+    "status": "pending"
+  },
+  {
+    "idForRequest": 3,
+    "employeeId": 2,
+    "startDate": "2024-03-15T00:00:00.000Z",
+    "endDate": "2024-03-17T00:00:00.000Z",
+    "status": "approved"
+  },
+  {
+    "idForRequest": 4,
+    "employeeId": 1,
+    "startDate": "2024-03-11T00:00:00.000Z",
+    "endDate": "2024-03-14T00:00:00.000Z",
+    "status": "approved"
+  },
+  {
+    "idForRequest": 5,
+    "employeeId": 1,
+    "startDate": "2024-03-14T00:00:00.000Z",
+    "endDate": "2024-03-22T00:00:00.000Z",
+    "status": "rejected"
+  },
+  {
+    "idForRequest": 6,
+    "employeeId": 1,
+    "startDate": "2024-03-11T00:00:00.000Z",
+    "endDate": "2024-03-13T00:00:00.000Z",
+    "status": "approved"
+  },
+  {
+    "idForRequest": 7,
+    "employeeId": 1,
+    "startDate": "2024-03-11T00:00:00.000Z",
+    "endDate": "2024-03-13T00:00:00.000Z",
+    "status": "rejected"
+  },
+  {
+    "idForRequest": 9,
+    "employeeId": 2,
+    "startDate": "2024-03-28T00:00:00.000Z",
+    "endDate": "2024-03-30T00:00:00.000Z",
+    "status": "rejected"
+  },
+  {
+    "idForRequest": 10,
+    "employeeId": 1,
+    "startDate": "2024-03-26T00:00:00.000Z",
+    "endDate": "2024-03-27T00:00:00.000Z",
+    "status": "rejected"
+  }
+]
