@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Add Holiday Request</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+    <h1>Add New Holiday Request</h1>
+    <% if (typeof error !== 'undefined' && error) { %>
+        <div class="error-message">
+            <%= error %>
+            <button class="close-btn" onclick="this.parentElement.style.display='none';">x</button>
+        </div>
+    <% } %>
+    <form action="/add-request" method="POST">
+        <div>
+            <input type="hidden" name="employeeId" value="<%= employeeId %>">
+            <!--<label for="employeeId">Employee ID:</label>
+            <input type="number" id="employeeId" name="employeeId" value="" required> -->
+        </div>
+        <div>
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" required>
+        </div>
+        <div>
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" name="endDate" required>
+        </div>
+        <button type="submit">Submit Request</button>
+    </form>
+    </div>
+    <div class="holidays-container"><% if(publicHolidays && publicHolidays.length > 0) { %>
+        <h3>Upcoming Public Holidays</h3>
+        <ul>
+            <% publicHolidays.forEach(function(publicHoliday) { %>
+                <li><%= publicHoliday.name %> - <%= publicHoliday.date %></li>
+            <% }) %>
+        </ul>
+    <% } %></div>
+</div>
+    <a href="/employees">Back to Employees List</a>
+</body>
+</html>
